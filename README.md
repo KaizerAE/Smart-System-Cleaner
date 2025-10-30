@@ -1,18 +1,7 @@
 # منظف النظام الذكي (Smart System Cleaner)
-- يمكنك استثناء أي مسار أو نوع ملف قبل التنفيذ.
-4) التنفيذ والتراجع
-- بعد التأكيد، ينفذ الأداة الحذف الآمن.
-- ينشئ نقطة استعادة بسيطة (اختيارية) أو سلة مهملات داخلية لاسترجاع الملفات خلال جلسة واحدة.
----
-## أنواع الملفات المستهدفة (قابلة للتخصيص)
-- ملفات الكاش المؤقتة: tmp, cache, .DS_Store, Thumbs.db
-- سجلات قديمة ومتضخمة: .log (مع حد زمني افتراضي > 30 يوم)
-- ملفات التحديثات المؤقتة وحِزم التنزيل غير المكتملة
-- مخلفات حزم مديري الحزم (npm, pip, pipenv, yarn) ضمن مجلدات العمل القديمة
-- ذاكرة المتصفحات المؤقتة (عند توفر صلاحيات المستخدم)
 تحذير لطيف: لن يُحذف أي شيء حساس بدون موافقتك الصريحة.
 ---
-## تشغيل المشروع محلياً
+##  تشغيل المشروع محلياً
 - المتطلبات: Python 3.9+ أو Node.js 18+
 خيار Python:
 ```
@@ -26,12 +15,18 @@ python main.py --mode fast --dry-run
 node index.js --mode fast --dry-run
 ```
 - يمكن تمرير معاملات:
-  - --mode [fast|deep|custom]
-  - --dry-run لمعاينة النتائج دون حذف
-  - --paths لتحديد مجلدات إضافية
-  - --exclude لاستثناء أنماط معيّنة
+  
+- --mode [
+fast|deep|custom
+]
+  
+- --dry-run لمعاينة النتائج دون حذف
+  
+- --paths لتحديد مجلدات إضافية
+  
+- --exclude لاستثناء أنماط معيّنة
 ---
-## بنية المشروع
+##  بنية المشروع
 ```
 Smart-System-Cleaner/
 ├─ screenshots/
@@ -44,14 +39,13 @@ Smart-System-Cleaner/
 └─ README.md                    # هذا الملف
 ```
 ---
-## خارطة الطريق (Roadmap)
+##  خارطة الطريق (Roadmap)
 - إضافة واجهة رسومية فعلية ببايثون (PySide6/Qt) أو Electron.
 - تكامل مع مكتبات الرسم البياني (matplotlib/plotly أو chart.js) لعرض النتائج.
 - وحدة ذكاء بسيطة لتعلّم أنماط الاستخدام واقتراح تنظيفات مستقبلية.
 - دعم جدولة التنظيف التلقائي وإشعارات قبل/بعد التنفيذ.
 ---
-## أدوات بديلة مشهورة لتنظيف وتحسين النظام:
-
+##  أدوات بديلة مشهورة لتنظيف وتحسين النظام:
 | اسم الأداة | الوظيفة | الرابط |
 |------------|---------|--------|
 | CCleaner | تنظيف الملفات المؤقتة وتحسين أداء النظام | [https://www.ccleaner.com](https://www.ccleaner.com) |
@@ -80,4 +74,42 @@ Smart-System-Cleaner/
 | Norton Utilities | تنظيف الجهاز وإصلاح الأخطاء في النظام وتحسين أداء الجهاز | [https://us.norton.com/products/norton-utilities](https://us.norton.com/products/norton-utilities) |
 | PC Health Advisor | تنظيف الجهاز وإصلاح الأخطاء في النظام وتحسين أداء الجهاز | [https://www.pchealthadvisor.com](https://www.pchealthadvisor.com) |
 | Clean Master for PC | تنظيف الجهاز وتحسين أداء النظام وتسريع الكمبيوتر | [https://www.cleanmasterofficial.com/pc/](https://www.cleanmasterofficial.com/pc/) |
-| System Ninja | تنظيف الجهاز وإزالة الملفات الغير ضرورية وتحسين الأداء | [https://singularlabs.com/software/system-ninja/](https://singularlabs.com/software/system-ninja/) |
+| System Ninja | تنظيف الجهاز وإزالة الملفات الغير ضرورية وتحسين الأداء | [https://singularabs.com/software/system-ninja/](https://singularabs.com/software/system-ninja/) |
+
+---
+## أوامر Batch المتقدمة لتنظيف النظام
+| رقم الأمر | الوظيفة | الأمر البرمجي | رابط أو مصدر إذا وجد |
+|---|---|---|---|
+| 1 | حذف الملفات المؤقتة للمستخدم | `del /s /q /f %temp%\*` | [oktechmasters](https://oktechmasters.org/ar/%D9%86%D9%88%D8%A7%D9%81%D8%B0/%D9%85%D8%B3%D8%AD-%D8%B0%D8%A7%D9%83%D8%B1%D8%A9-%D8%A7%D9%84%D8%AA%D8%AE%D8%B2%D9%8A%D9%86-%D8%A7%D9%84%D9%85%D8%A4%D9%82%D8%AA/) |
+| 2 | حذف ملفات النظام المؤقتة | `del /s /q /f %systemroot%\temp\*` |  |
+| 3 | مسح كاش Internet Explorer | `RunDll32.exe InetCpl.cpl,ClearMyTracksByProcess 8` | |
+| 4 | مسح كاش تحديثات ويندوز | ```bat
+net stop wuauserv
+rmdir /s /q %windir%\SoftwareDistribution
+net start wuauserv
+``` | [microsoft](https://support.microsoft.com/ar-sa/windows/%D8%AA%D9%84%D9%85%D9%8A%D8%AD%D8%A7%D8%AA-%D9%84%D8%AA%D8%AD%D8%B3%D9%8A%D9%86-%D8%A3%D8%AF%D8%A7%D8%A1-%D8%A7%D9%84%D9%83%D9%85%D8%A8%D9%8A%D9%88%D8%AA%D8%B1-%D9%81%D9%8A-windows-b3b3ef5b-5953-fb6a-2528-4bbed82fba96) |
+| 5 | تنظيف المثبتات القديمة | `msizap.exe g!` |  |
+| 6 | حذف Prefetch | `del /q /s /f %windir%\prefetch\*` |  |
+| 7 | تعطيل الهيبرنيشن | `powercfg -h off` | [microsoft](https://support.microsoft.com/ar-sa/windows/%D8%AA%D9%84%D9%85%D9%8A%D8%AD%D8%A7%D8%AA-%D9%84%D8%AA%D8%AD%D8%B3%D9%8A%D9%86-%D8%A3%D8%AF%D8%A7%D8%A1-%D8%A7%D9%84%D9%83%D9%85%D8%A8%D9%8A%D9%88%D8%AA%D8%B1-%D9%81%D9%8A-windows-b3b3ef5b-5953-fb6a-2528-4bbed82fba96) |
+| 8 | حذف كاش الصور المصغرة | `del /q /s /f /a:h %localappdata%\Microsoft\Windows\Explorer\thumbcache_*.db` |  |
+| 9 | مسح DNS كاش | `ipconfig /flushdns` | [arabitec](https://arabitec.com/%D8%AA%D9%86%D8%B8%D9%8A%D9%81-%D9%83%D8%A7%D8%B4-%D8%A7%D9%84%D9%88%D9%8A%D9%86%D8%AF%D9%88%D8%B2/) |
+| 10 | تنظيف سجل الأحداث Event Logs | `wevtutil el | Foreach-Object {wevtutil cl "$"}` | [microsoft](https://support.microsoft.com/ar-sa/windows/%D8%AA%D9%84%D9%85%D9%8A%D8%AD%D8%A7%D8%AA-%D9%84%D8%AA%D8%AD%D8%B3%D9%8A%D9%86-%D8%A3%D8%AF%D8%A7%D8%A1-%D8%A7%D9%84%D9%83%D9%85%D8%A8%D9%8A%D9%88%D8%AA%D8%B1-%D9%81%D9%8A-windows-b3b3ef5b-5953-fb6a-2528-4bbed82fba96) |
+| 11 | حذف ملفات الإنترنت المؤقتة | `del /q /s /f "%userprofile%\AppData\Local\Microsoft\Windows\Temporary Internet Files\*.*"` |  |
+| 12 | حذف Windows.old بعد الترقية | `rd /s /q %SystemDrive%\windows.old` | [microsoft](https://support.microsoft.com/ar-sa/windows/%D8%AA%D9%84%D9%85%D9%8A%D8%AD%D8%A7%D8%AA-%D9%84%D8%AA%D8%AD%D8%B3%D9%8A%D9%86-%D8%A3%D8%AF%D8%A7%D8%A1-%D8%A7%D9%84%D9%83%D9%85%D8%A8%D9%8A%D9%88%D8%AA%D8%B1-%D9%81%D9%8A-windows-b3b3ef5b-5953-fb6a-2528-4bbed82fba96) |
+| 13 | تنظيف بقايا تحديثات النظام | `dism.exe /Online /Cleanup-Image /StartComponentCleanup /ResetBase` |  |
+| 14 | حذف كاش متجر Windows | `wsreset.exe` | [youstable](https://www.youstable.com/ar/blog/clear-cache-in-windows-11/) |
+| 15 | تفريغ سلة المحذوفات | `rd /s /q %SystemDrive%\$Recycle.bin` |  |
+| 16 | تنظيف سجلات النظام (PowerShell) | `for /F "tokens=*" %1 in ('wevtutil.exe el') DO wevtutil.exe cl "%1"` |  |
+| 17 | حذف Windows.old بصلاحيات مسؤول | ```bat
+takeown /F %SystemDrive%\windows.old /R /A /D Y
+icacls %SystemDrive%\windows.old /grant administrators:F /T
+rd /S /Q %SystemDrive%\windows.old
+``` | [microsoft](https://support.microsoft.com/ar-sa/windows/%D8%AA%D9%84%D9%85%D9%8A%D8%AD%D8%A7%D8%AA-%D9%84%D8%AA%D8%AD%D8%B3%D9%8A%D9%86-%D8%A3%D8%AF%D8%A7%D8%A1-%D8%A7%D9%84%D9%83%D9%85%D8%A8%D9%8A%D9%88%D8%AA%D8%B1-%D9%81%D9%8A-windows-b3b3ef5b-5953-fb6a-2528-4bbed82fba96) |
+| 18 | تعطيل السبات (صيغة أخرى) | `powercfg.exe /hibernate off` |  |
+| 19 | حذف نقاط استعادة النظام | `vssadmin delete shadows /for=%systemdrive% /all /quiet` |  |
+| 20 | تنظيف كاش Microsoft Edge | `del /F /Q /A:R %LocalAppData%\Packages\Microsoft.MicrosoftEdge*\AC\INetCache\*.*` | [youstable](https://www.youstable.com/ar/blog/clear-cache-in-windows-11/) |
+| 21 | مسح تاريخ البحث في ويندوز | `del /q /s /f %localappdata%\Microsoft\Windows\ConnectedSearch\*` |  |
+| 22 | حذف ملفات LogFiles | `del /q /s /f %SystemRoot%\System32\LogFiles\*.*` |  |
+| 23 | تنظيف سجلات النظام (تكرار) | `for /F "tokens=*" %1 in ('wevtutil.exe el') DO wevtutil.exe cl "%1"` |  |
+| 24 | حذف تقارير أخطاء ويندوز | `del /s /q /f %localappdata%\Microsoft\Windows\WER\*` |  |
+| 25 | تنظيف كاش Windows Defender | `del /q /s /f %ProgramData%\Microsoft\Windows Defender\Scans\*` |  |
