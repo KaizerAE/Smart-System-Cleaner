@@ -1,8 +1,6 @@
 # منظف النظام الذكي (Smart System Cleaner)
-
 ---
 ## أوامر Batch المتقدمة لتنظيف النظام
-
 تنسيق العرض: لكل أمر عنوان فرعي، يليه مربع كود PowerShell يحتوي الصيغة التنفيذية المباشرة (irm "URL" | iex) إن وُجد، أو كود الأوامر ككتلة. أسفل كل أمر وصف مختصر بالعربية يوضح وظيفته والتنبيه إلى الحاجة لصلاحيات المسؤول إذا لزم.
 
 #### Stable Branch (موصى به)
@@ -75,30 +73,6 @@ ipconfig /flushdns
 ```
 - يمسح كاش DNS لإصلاح مشاكل الدومينات أو التوجيه الشبكي.
 
-#### تنظيف سجل الأحداث (Event Logs) عبر PowerShell
-```powershell
-wevtutil el | ForEach-Object { wevtutil cl $_ }
-```
-- يفرّغ سجلات الأحداث للنظام والتطبيقات. يتطلب نافذة PowerShell كمسؤول.
-
-#### حذف ملفات الإنترنت المؤقتة (IE/Legacy)
-```bat
-del /q /s /f "%userprofile%\AppData\Local\Microsoft\Windows\Temporary Internet Files\*.*"
-```
-- ينظف ملفات إنترنت مؤقتة قديمة تخص حساب المستخدم لتحرير مساحة.
-
-#### حذف Windows.old بعد الترقية (سريع)
-```bat
-rd /s /q %SystemDrive%\windows.old
-```
-- يزيل مجلد Windows.old الناتج عن ترقية النظام. قد يتطلب صلاحيات مسؤول.
-
-#### تنظيف بقايا مكونات النظام (DISM)
-```bat
-dism.exe /Online /Cleanup-Image /StartComponentCleanup /ResetBase
-```
-- يقلل مساحة مجلد WinSxS عبر تنظيف المكونات القديمة. التشغيل كمسؤول مطلوب.
-
 #### إعادة تعيين كاش متجر Microsoft Store
 ```bat
 wsreset.exe
@@ -169,6 +143,31 @@ del /q /s /f "%ProgramData%\Microsoft\Windows Defender\Scans\*"
 
 ---
 
-ملاحظات:
+### ملاحظات:
 - بعض الأوامر قد تُغلق عمليات أو خدمات وتحتاج إعادة تشغيل الجهاز للحصول على أفضل نتيجة.
 - الأوامر التي تؤثر على التحديثات، السبات، نقاط الاستعادة أو مجلدات النظام تتطلب نافذة موجه أوامر/PowerShell كمسؤول.
+
+---
+
+## أدوات تنظيف بديلة ومشهورة
+
+| الأداة | الوصف | الرابط |
+|--------|-------|--------|
+| **CCleaner** | أداة شهيرة لتنظيف الملفات المؤقتة والريجستري وإدارة برامج بدء التشغيل. | [تحميل CCleaner](https://www.ccleaner.com/) |
+| **BleachBit** | أداة مجانية ومفتوحة المصدر لتنظيف النظام وحماية الخصوصية. | [تحميل BleachBit](https://www.bleachbit.org/) |
+| **Wise Disk Cleaner** | أداة سريعة وآمنة لتنظيف القرص الصلب وإزالة الملفات غير الضرورية. | [تحميل Wise Disk Cleaner](https://www.wisecleaner.com/wise-disk-cleaner.html) |
+| **Glary Utilities** | مجموعة أدوات شاملة لصيانة النظام وتحسين الأداء. | [تحميل Glary Utilities](https://www.glarysoft.com/) |
+| **System Ninja** | أداة خفيفة وسريعة لتنظيف النظام وإزالة الملفات غير المرغوب فيها. | [تحميل System Ninja](https://singularlabs.com/software/system-ninja/) |
+| **Windows Disk Cleanup** | أداة مدمجة في ويندوز لتنظيف الملفات المؤقتة والنظام. | مدمجة في Windows (ابحث عن "Disk Cleanup") |
+| **TreeSize Free** | أداة لتحليل مساحة القرص وتحديد الملفات والمجلدات الكبيرة. | [تحميل TreeSize Free](https://www.jam-software.com/treesize_free) |
+| **Autoruns** | أداة متقدمة من Microsoft Sysinternals لإدارة برامج بدء التشغيل والخدمات. | [تحميل Autoruns](https://docs.microsoft.com/en-us/sysinternals/downloads/autoruns) |
+| **Dism++** | أداة متقدمة لإدارة صور Windows وتنظيف النظام. | [تحميل Dism++](https://github.com/Chuyu-Team/Dism-Multi-language/releases) |
+| **PrivaZer** | أداة شاملة لتنظيف النظام وحماية الخصوصية وإزالة الآثار. | [تحميل PrivaZer](https://privazer.com/) |
+
+---
+
+### نصائح عامة:
+- استخدم أدوات التنظيف بحذر وقم بعمل نسخة احتياطية قبل إجراء تغييرات كبيرة.
+- تأكد من تحميل الأدوات من مصادرها الرسمية فقط.
+- بعض الأدوات قد تحتاج صلاحيات مسؤول للعمل بكفاءة.
+- راجع الإعدادات قبل تشغيل عمليات التنظيف لتجنب حذف ملفات مهمة.
